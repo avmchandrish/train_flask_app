@@ -1,0 +1,9 @@
+flask
+gunicorn
+selenium
+numpy
+pandas
+datetime
+
+
+

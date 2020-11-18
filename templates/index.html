@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Indian Railways Ticket Availability</title>
+	<link rel="stylesheet" type="text/css" href="../css/base_css.css">
+	
+<body>
+
+<h1>Check the seat availability</h1> 
+
+
+<form id="form1">
+	<p>
+		From:
+		<input type="text" name="from" size="15" placeholder="STNNAME - CODE" />
+	</p>
+	<p>
+		To:
+		<input type="text" name="to" size="15" placeholder="STNNAME - CODE"/>
+	</p>
+	<p>
+		Date:
+		<input type="text" name="dt" size="15" placeholder="dd-mm-yyyy"/>
+	</p>
+</form>
+
+<button type="button" form="form1" onclick="get_data()" value="Submit">Submit</button>
+
+<div></div>
+
+
+<div id="showData">
+</div>
+<script type="text/javascript" src='../js/post_table.js'></script>
+
+</body>
+</html>
