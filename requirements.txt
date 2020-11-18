@@ -4,6 +4,3 @@ selenium
 numpy
 pandas
 datetime
-
-
-

@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Indian Railways Ticket Availability</title>
-	<link rel="stylesheet" type="text/css" href="../css/base_css.css">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base_css.css') }}">
 	
 <body>
 
@@ -31,7 +31,7 @@
 
 <div id="showData">
 </div>
-<script type="text/javascript" src='../js/post_table.js'></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/post_table.js')}}"></script>
 
 </body>
 </html>

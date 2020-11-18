@@ -3,12 +3,14 @@
 
 # In[1]:
 
-def  run_crawls(fr, to, dt):
+def run_crawls(fr, to, dt):
     import time
     st=time.time()
     from selenium import webdriver
     from selenium.webdriver.chrome.options import Options
     from selenium.webdriver.common.keys import Keys
+    #from selenium.webdriver.support import expected_conditions as EC
+    #from selenium.webdriver.support.ui import WebDriverWait
     import pandas as pd
     import time
     import datetime
@@ -30,13 +32,17 @@ def  run_crawls(fr, to, dt):
 
     
     chrome_options = Options()
-    chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+    if os.environ.get("GOOGLE_CHROME_BIN"):
+        chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
     chrome_options.add_argument("--disable-dev-shm-usage")
     chrome_options.add_argument("--no-sandbox")
     chrome_options.add_argument('--disable-gpu')
     chrome_options.headless=True
-    driver=webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), options=chrome_options) 
-
+    if os.environ.get("CHROMEDRIVER_PATH"):
+        driver=webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), options=chrome_options) 
+    else:
+        driver=webdriver.Chrome(options=chrome_options)
+    #wait=WebDriverWait
     # In[4]:
 
 
@@ -91,7 +97,15 @@ def  run_crawls(fr, to, dt):
         html.send_keys(Keys.END)
         
         #getting the prices for different days shown in the panel
-        av_text=driver.find_element_by_id('ui-panel-' + str(k) + '-content').text
+        #wait(driver, 10).until(EC.presence_of_element_located((By.ID, 'ui-panel-' + str(k) + '-content')))       
+        re=0
+        while re<5: 
+            try:
+                av_text=driver.find_element_by_id('ui-panel-' + str(k) + '-content').text
+                break
+            except:
+                driver.implicitly_wait(0.7)
+            re=re+1
         k=k+1
         av_split=av_text.split('\n')
         
