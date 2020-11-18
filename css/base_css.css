@@ -1,0 +1,41 @@
+body{
+	font-family: Arial, verdana, sans-serif;
+	color: #1111111;
+}
+
+table{
+	width: 600px;
+}
+
+th, td{
+	padding: 7px 10px 10px 10px;
+}
+th{
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	font-size: 90%;
+	border-bottom: 2px solid #1111111;
+	border-top: 1px solid #999;
+	text-align: left;
+	background-color: #c3e6e5;
+}
+
+tr.even {
+background-color: #efefef;}
+tr:hover {
+background-color: #c3e6e5;}
+
+.loader {
+  border: 10px solid #f3f3f3; /* Light grey */
+  border-top: 10px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 2s linear infinite;
+
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
