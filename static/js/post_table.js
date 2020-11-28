@@ -21,7 +21,7 @@ var fr=formd.get("from");
 var to=formd.get("to");
 var dt=formd.get("dt");
 
-var URL='http://127.0.0.1:5000/train/'.concat(fr, '/', to, '/', dt);
+var URL='http://127.0.0.1:5000/trains?fr='.concat(fr, '&to=', to, '&dt=', dt);
 
 var request = new XMLHttpRequest();
 request.open('GET', URL, true)
