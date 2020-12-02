@@ -34,10 +34,10 @@ def run_crawls(fr, to, dt):
     chrome_options = Options()
     if os.environ.get("GOOGLE_CHROME_BIN"):
         chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
-    chrome_options.add_argument("--disable-dev-shm-usage")
-    chrome_options.add_argument("--no-sandbox")
-    chrome_options.add_argument('--disable-gpu')
-    chrome_options.headless=True
+    #chrome_options.add_argument("--disable-dev-shm-usage")
+    #chrome_options.add_argument("--no-sandbox")
+    #chrome_options.add_argument('--disable-gpu')
+    #chrome_options.headless=True
     if os.environ.get("CHROMEDRIVER_PATH"):
         driver=webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), options=chrome_options) 
     else:
@@ -103,7 +103,7 @@ def run_crawls(fr, to, dt):
         #getting the prices for different days shown in the panel
         #wait(driver, 10).until(EC.presence_of_element_located((By.ID, 'ui-panel-' + str(k) + '-content')))       
         re=0
-        while re<5: 
+        while re<10: 
             try:
                 av_text=driver.find_element_by_id('ui-panel-' + str(k) + '-content').text
                 break
