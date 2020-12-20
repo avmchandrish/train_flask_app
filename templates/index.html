@@ -2,25 +2,27 @@
 <html>
 <head>
 	<title>Indian Railways Ticket Availability</title>
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base_css.css') }}">
-	
+<!--	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base_css.css') }}"> -->
+	<link rel="stylesheet" type="text/css" href="../static/css/base_css.css">	
 <body>
 
+<div id="header">
 <h1>Check the seat availability</h1> 
+</div>
 
 
 <form id="form1">
 	<p>
 		From:
-		<input type="text" name="from" size="15" placeholder="STNNAME - CODE" />
+		<input id="from" type="text" name="from" size="20" placeholder="stationname - code" />
 	</p>
 	<p>
 		To:
-		<input type="text" name="to" size="15" placeholder="STNNAME - CODE"/>
+		<input id="to" type="text" name="to" size="20" placeholder="stationname - code"/>
 	</p>
 	<p>
 		Date:
-		<input type="text" name="dt" size="15" placeholder="dd-mm-yyyy"/>
+		<input id="date" type="text" name="dt" size="15" placeholder="dd-mm-yyyy"/>
 	</p>
 </form>
 
@@ -31,7 +33,8 @@
 
 <div id="showData">
 </div>
-<script type="text/javascript" src="{{ url_for('static', filename='js/post_table.js')}}"></script>
+<!-- <script type="text/javascript" src="{{ url_for('static', filename='js/post_table.js')}}"></script> -->
+<script type="text/javascript" src="../static/js/post_table.js"></script>
 
 </body>
 </html>
